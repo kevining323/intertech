@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intertech Servicios</title>
+  <link rel="stylesheet" href="servicios.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700;900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* bordes redondeados */
+    .img-wrapper {
+      border-radius: 15px;
+      overflow: hidden;
+      display: inline-block;
+    }
+    .img-wrapper img {
+      width: 100%;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <header class="navbar fade-up">
+    <div class="nav-content">
+      <div class="logo-container img-wrapper">
+        <img src="images/logomejorado.jpg" alt="Logo Intertech" class="logo">
+      </div>
+
+      <!-- BOTÓN HAMBURGUESA -->
+      <div class="hamburguesa" id="hamburguesa">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- MENÚ NAVEGACIÓN -->
+      <nav class="links" id="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contactanos.html">Contacto</a>
+        <a href="#" class="cta">Llámanos</a>
+      </nav>
+
+      <div class="hamburger" id="hamburger">
+      ☰
+    </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero fade-up">
+    <div class="hero-content">
+      <h1>Nuestros Servicios</h1>
+      <p>Buscamos ser un socio estratégico para nuestros clientes, prolongando la vida útil de sus unidades a través de personal altamente capacitado</p>
+      <button class="boton-primario">Contactanos</button>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 1 -->
+  <section class="info fade-up">
+    <div class="info-content">
+      <div class="texto">
+        <h2>Mantenimiento General</h2>
+        <p>El mantenimiento general de Intertech garantiza el óptimo rendimiento de camiones y motores mediante revisiones preventivas, diagnóstico especializado y reparaciones que aseguran mayor seguridad y durabilidad</p>
+      </div>
+      <div class="img-wrapper">
+        <img src="images/t.15.jpeg" alt="Mantenimiento General">
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="servicios fade-up">
+    <h2>Nuestros Servicios</h2>
+    <div class="cards">
+      <div class="card fade-up">
+        <div class="img-wrapper">
+          <img src="images/carrousel/85f14a304dc64a06d5fb98af79ad096500be09fa.jpg" alt="">
+        </div>
+        <h3>Mantenimiento General</h3>
+        <p>Mantenimiento preventivo y correctivo de maquinaria pesada.</p>
+      </div>
+      <div class="card fade-up">
+        <div class="img-wrapper">
+          <img src="images/carrousel/9873b28b3946ff62709870bf93ec4264ecc590d5.jpg" alt="">
+        </div>
+        <h3>Reparaciones eléctricas</h3>
+        <p>Reparación de sistemas eléctricos y electrónicos.</p>
+      </div>
+      <div class="card fade-up">
+        <div class="img-wrapper">
+          <img src="images/carrousel/cb7f0f49e5f43b8338f9a4359d9a117a82a46a61.jpg" alt="">
+        </div>
+        <h3>Diagnóstico técnico</h3>
+        <p>Diagnóstico computarizado de fallas técnicas.</p>
+      </div>
+    </div>
+  </section>
+
+<!-- Caracteristicas -->
+  <section class="sponsors fade-up">
+    <div class="logos">
+      <div class="img-wrapper"><img src="images/iconos/fecha.png" alt=""><div><h3>Atención 24/7</h3></div></div>
+      <div class="img-wrapper"><img src="images/iconos/medalla.png" alt=""><div><h3>Calidad garantizada</h3></div></div>
+      <div class="img-wrapper"><img src="images/iconos/repuestos.png" alt=""><div><h3>Repuestos Originales</h3></div></div>
+      <div class="img-wrapper"><img src="images/iconos/trabajoequipo.png" alt=""><div><h3>Equipo capacitado</h3></div></div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer fade-up">
+    <div>
+      <img src="images/logomejorado.jpg" alt="Logo" class="footer-logo">
+      <p>Más de 8 años brindando confianza en el sector automotriz.</p>
+    </div>
+    <div>
+      <h4>Links</h4>
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="#">Nosotros</a>
+      <a href="#">Contacto</a>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <p>Tel: +51 999 999 999</p>
+      <p>info@intertech.com</p>
+    </div>
+  </footer>
+
+    <!-- SCRIPT PARA ANIMACIONES -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const elementos = document.querySelectorAll(".fade-up");
+
+    const observador = new IntersectionObserver((entradas) => {
+      entradas.forEach(entrada => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add("visible");
+        } else {
+          entrada.target.classList.remove("visible"); // 👈 se reinicia al salir
+        }
+      });
+    }, { threshold: 0.15 });
+
+    elementos.forEach(el => observador.observe(el));
+  });
+  </script>
+  <script>
+  const hamburger = document.getElementById('hamburger');
+  const links = document.querySelector('.links');
+
+  hamburger.addEventListener('click', () => {
+    links.classList.toggle('show');
+  });
+</script>
+</body>
+</html>

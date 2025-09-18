@@ -1,0 +1,268 @@
+:root {
+  --color-primario: #1E3A5F;     /* azul acero corporativo */
+  --color-secundario: #B7410E;  /* amarillo maquinaria */
+  --fondo: #F4F4F4;      /* gris claro técnico */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  margin: 0;
+  line-height: 1.6;
+  background: #fff;
+}
+
+/* NAV */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: var(--color-primario);
+  padding: 1rem 5%;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 4px 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.logo-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.35);
+}
+.logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+}
+.links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+.links a:hover {
+  text-decoration: underline;
+}
+.cta {
+  background: var(--color-secundario);
+  padding: .5rem 1rem;
+  border-radius: 6px;
+}
+
+/* Hamburguesa (solo móvil) */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    flex-direction: column;
+    background: var(--color-primario);
+    width: 200px;
+    padding: 1rem;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  .links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+
+/* Sección de Contacto */
+.contacto {
+  background-color: var(--gris);
+  padding: 80px 5%;
+  color: var(--naranja);
+}
+
+.contacto-contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contacto h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--naranja);
+}
+
+.contacto p {
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* ===== FORMULARIO ===== */
+.contacto-form {
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.contacto-form .form-group {
+  margin-bottom: 25px;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.contacto-form input:focus,
+.contacto-form textarea:focus {
+  border-color: var(--azul);
+}
+
+.form-boton {
+  text-align: center;
+}
+
+.btn-enviar {
+  background-color: var(--azul);
+  background-color: #B7410E;
+  color: #ffffff;
+  border: none;
+  padding: 15px 35px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-enviar:hover {
+  background-color: #b08f22;
+}
+
+/* ===== INFORMACIÓN ===== */
+.contacto-info {
+  text-align: left;
+}
+
+.contacto-info h3 {
+  color: var(--naranja);
+  margin-bottom: 20px;
+}
+
+.contacto-info p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.contacto-mapa {
+  margin-top: 25px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.contacto-mapa iframe {
+  width: 100%;
+  height: 260px;
+  border: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contacto-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER */
+.footer {
+  background: var(--color-primario);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 4rem 5%;
+  flex-wrap: wrap;
+}
+.footer-logo {
+  width: 120px;
+  margin-bottom: 1rem;
+}
+.footer h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin-bottom: .5rem;
+}
+.footer a:hover { text-decoration: underline; }

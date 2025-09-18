@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intertech</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* bordes redondeados */
+    .img-wrapper {
+      border-radius: 15px;
+      overflow: hidden;
+      display: inline-block;
+    }
+    .img-wrapper img {
+      width: 100%;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar fade-up">
+    <div class="nav-content">
+      <div class="logo-container img-wrapper">
+        <img src="images/logomejorado.jpg" alt="Logo Intertech" class="logo">
+      </div>
+
+      <!-- BOTÓN HAMBURGUESA -->
+      <div class="hamburguesa" id="hamburguesa">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- MENÚ NAVEGACIÓN -->
+      <nav class="links" id="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contactanos.html">Contacto</a>
+        <a href="#" class="cta">Llámanos</a>
+      </nav>
+
+      <div class="hamburger" id="hamburger">
+      ☰
+    </div>
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero fade-up">
+    <div class="hero-content">
+      <h1>Soluciones tecnológicas a tu alcance</h1>
+      <p>Especialistas en maquinaria pesada, mantenimiento y asistencia técnica en todo el país.</p>
+      <button class="boton-primario">Solicitar ayuda urgente</button>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 1 -->
+  <section class="info fade-up">
+    <div class="info-content">
+      <div class="texto">
+        <h2>Auxilio Mecánico</h2>
+        <p>¿Inconvenientes inesperados? Contáctanos en cualquier momento: estamos disponibles 24/7 los 365 días del año, en todo el territorio nacional.</p>
+      </div>
+      <div class="img-wrapper">
+        <img src="images/aa194d5507646dc7baf6ff608fc91d1552ea9d81.jpg" alt="Auxilio mecánico">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2 -->
+  <section class="info bg-light fade-up">
+    <div class="info-content">
+      <div class="img-wrapper">
+        <img src="images/4ccf9de05c090cc8be6c0b363d2ab0f1c33a18a9.jpg" alt="Nosotros">
+      </div>
+      <div class="texto">
+        <h2>Nosotros</h2>
+        <p>Somos Intertech, una empresa peruana con más de 8 años de trayectoria en el sector automotriz, brindando servicios de mantenimiento y reparación postventa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="servicios fade-up">
+    <h2>Nuestros Servicios</h2>
+    <div class="cards">
+      <div class="card fade-up">
+        <div class="img-wrapper">
+          <img src="images/carrousel/85f14a304dc64a06d5fb98af79ad096500be09fa.jpg" alt="">
+        </div>
+        <h3>Mantenimiento General</h3>
+        <p>Mantenimiento preventivo y correctivo de maquinaria pesada.</p>
+      </div>
+      <div class="card fade-up">
+        <div class="img-wrapper">
+          <img src="images/carrousel/9873b28b3946ff62709870bf93ec4264ecc590d5.jpg" alt="">
+        </div>
+        <h3>Reparaciones eléctricas</h3>
+        <p>Reparación de sistemas eléctricos y electrónicos.</p>
+      </div>
+      <div class="card fade-up">
+        <div class="img-wrapper">
+          <img src="images/carrousel/cb7f0f49e5f43b8338f9a4359d9a117a82a46a61.jpg" alt="">
+        </div>
+        <h3>Diagnóstico técnico</h3>
+        <p>Diagnóstico computarizado de fallas técnicas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMPRESAS -->
+  <section class="sponsors fade-up">
+    <h2>Trabajamos con estas empresas</h2>
+    <div class="logos">
+      <div class="img-wrapper"><img src="images/logos/2409678c2fd66380193e21fceeb47ecd0e7e0461.png" alt=""></div>
+      <div class="img-wrapper"><img src="images/logos/3438e399540747c468d20152c66d750ae5baccee.png" alt=""></div>
+      <div class="img-wrapper"><img src="images/logos/ffe320e9b265e43862dbca7aba49ca8a0dbd255e.png" alt=""></div>
+    </div>
+  </section>
+
+  <!-- HOMOLOGACIÓN -->
+  <section class="info fade-up">
+    <div class="info-content">
+      <div class="texto">
+        <h2>Empresa homologada</h2>
+        <p>En INTERTECH, nuestra homologación por Bureau Veritas certifica la calidad de nuestros procesos y recursos, asegurando servicios de altos estándares de calidad, atención oportuna, costos competitivos y mínimos riesgos para nuestros clientes.</p>
+      </div>
+      <div class="img-wrapper">
+        <img src="images/3f5303b1e4e138a59b6ebfa3b885fd52fe3ed665.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer fade-up">
+    <div>
+      <img src="images/logomejorado.jpg" alt="Logo" class="footer-logo">
+      <p>Más de 8 años brindando confianza en el sector automotriz.</p>
+    </div>
+    <div>
+      <h4>Links</h4>
+      <a href="#">Inicio</a>
+      <a href="#">Servicios</a>
+      <a href="#">Nosotros</a>
+      <a href="#">Contacto</a>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <p>Tel: +51 999 999 999</p>
+      <p>info@intertech.com</p>
+    </div>
+  </footer>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const elementos = document.querySelectorAll(".fade-up");
+    const observador = new IntersectionObserver((entradas) => {
+      entradas.forEach(entrada => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add("visible");
+        } else {
+          entrada.target.classList.remove("visible");
+        }
+      });
+    }, { threshold: 0.15 });
+    elementos.forEach(el => observador.observe(el));
+  });
+
+  // NAV RESPONSIVE
+  const btnHamburguesa = document.getElementById('hamburguesa');
+  const navLinks = document.getElementById('nav-links');
+
+  btnHamburguesa.addEventListener('click', () => {
+    btnHamburguesa.classList.toggle('activo');
+    navLinks.classList.toggle('activo');
+  });
+
+  document.querySelectorAll('#nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      btnHamburguesa.classList.remove('activo');
+      navLinks.classList.remove('activo');
+    });
+  });
+</script>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const links = document.querySelector('.links');
+
+  hamburger.addEventListener('click', () => {
+    links.classList.toggle('show');
+  });
+</script>
+
+</body>
+</html>

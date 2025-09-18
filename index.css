@@ -1,0 +1,240 @@
+:root {
+  --color-primario: #1E3A5F;     /* azul acero corporativo */
+  --color-secundario: #B7410E;  /* amarillo maquinaria */
+  --fondo: #F4F4F4;      /* gris claro técnico */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  margin: 0;
+  line-height: 1.6;
+  background: #fff;
+}
+
+/* NAV */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: var(--color-primario);
+  padding: 1rem 5%;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 4px 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.logo-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.35);
+}
+.logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+}
+.links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+.links a:hover {
+  text-decoration: underline;
+}
+.cta {
+  background: var(--color-secundario);
+  padding: .5rem 1rem;
+  border-radius: 6px;
+}
+
+/* Hamburguesa (solo móvil) */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    flex-direction: column;
+    background: var(--color-primario);
+    width: 200px;
+    padding: 1rem;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  .links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(rgba(31,41,55,0.7), rgba(31,41,55,0.7)), url('images/t.18.jpeg') center/cover;
+  color: white;
+  text-align: left;
+  padding: 10rem 5%;
+  display: flex;
+  align-items: center;
+}
+.hero-content { max-width: 700px; }
+.hero h1 {
+  font-family: 'Merriweather', serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+.boton-primario {
+  background: var(--color-secundario);
+  border: none;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.boton-primario:hover { background: #d97706; }
+
+/* INFO SECTIONS */
+.info {
+  padding: 5rem 5%;
+}
+.info.bg-light { background: #f9f9f9; }
+.info-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.info-content img {
+  width: 350px;
+  border-radius: 10px;
+}
+.info .texto h2 {
+  font-family: 'Merriweather', serif;
+  color: var(--color-primario);
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+/* SERVICIOS */
+.servicios {
+  padding: 5rem 5%;
+  background: #fff;
+  text-align: center;
+}
+.servicios h2 {
+  font-family: 'Merriweather', serif;
+  color: var(--color-primario);
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.card {
+  background: var(--fondo);
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 280px;
+  transition: transform .3s ease, box-shadow .3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+.card h3 {
+  color: var(--color-primario);
+  margin-bottom: .5rem;
+}
+
+/* SPONSORS */
+.sponsors {
+  text-align: center;
+  padding: 5rem 5%;
+}
+.sponsors .logos {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 2rem;
+}
+.sponsors .logos img {
+  width: 120px;
+  height: auto;
+  opacity: 0.7;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.sponsors .logos img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--color-primario);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 4rem 5%;
+  flex-wrap: wrap;
+}
+.footer-logo {
+  width: 120px;
+  margin-bottom: 1rem;
+}
+.footer h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin-bottom: .5rem;
+}
+.footer a:hover { text-decoration: underline; }

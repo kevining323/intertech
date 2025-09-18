@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactanos</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intertech</title>
+  <link rel="stylesheet" href="contactanos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* bordes redondeados */
+    .img-wrapper {
+      border-radius: 15px;
+      overflow: hidden;
+      display: inline-block;
+    }
+    .img-wrapper img {
+      width: 100%;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+    <!-- NAV -->
+  <header class="navbar fade-up">
+    <div class="nav-content">
+      <div class="logo-container img-wrapper">
+        <img src="images/logomejorado.jpg" alt="Logo Intertech" class="logo">
+      </div>
+
+      <!-- BOTÓN HAMBURGUESA -->
+      <div class="hamburguesa" id="hamburguesa">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- MENÚ NAVEGACIÓN -->
+      <nav class="links" id="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contactanos.html">Contacto</a>
+        <a href="#" class="cta">Llámanos</a>
+      </nav>
+
+      <div class="hamburger" id="hamburger">
+      ☰
+    </div>
+    </div>
+  </header>
+
+<section class="contacto" id="contacto">
+  <div class="contacto-contenedor">
+    <h2>Contáctanos</h2>
+    <p>¿Tienes alguna consulta o necesitas una cotización? Escríbenos y nos pondremos en contacto contigo lo antes posible.</p>
+
+    <div class="contacto-grid">
+      <!-- Formulario -->
+      <form class="contacto-form">
+        <div class="form-group">
+          <input type="text" name="nombre" placeholder="Nombre completo" required>
+        </div>
+        <div class="form-group">
+          <input type="text" name="cargo" placeholder="Cargo" required>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Correo electrónico" required>
+        </div>
+        <div class="form-group">
+          <input type="text" name="asunto" placeholder="Asunto" required>
+        </div>
+        <div class="form-group">
+          <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+        </div>
+        <div class="form-boton">
+          <button type="submit" class="btn-enviar">Enviar mensaje</button>
+        </div>  
+        <div id="mensaje-estado"></div>
+      </form>
+      
+
+      <script>
+      document.getElementById('contacto-form').addEventListener('submit', function(e) {
+        e.preventDefault(); // Evita que recargue la página
+
+        const form = e.target;
+        const datos = new FormData(form);
+
+        fetch(form.action, {
+          method: 'POST',
+          body: datos
+        })
+        .then(res => res.json())
+        .then(data => {
+          const estado = document.getElementById('mensaje-estado');
+          estado.textContent = data.mensaje;
+          estado.style.marginTop = '1rem';
+          estado.style.fontWeight = '600';
+          estado.style.color = data.estado === 'ok' ? 'green' : 'red';
+
+          if (data.estado === 'ok') form.reset(); // limpiar campos si se envió
+        })
+        .catch(() => {
+          const estado = document.getElementById('mensaje-estado');
+          estado.textContent = 'Ocurrió un error inesperado';
+          estado.style.color = 'red';
+        });
+      });
+      </script>
+
+
+      <!-- Información de contacto -->
+      <div class="contacto-info">
+        <h3>Información de contacto</h3>
+        <p><strong>Dirección:</strong> Jr. San Lino 6378, Urb. Sta. Luisa, Los Olivos – Lima – Perú</p>
+        <p><strong>Teléfono:</strong> +51 987 654 321</p>
+        <p><strong>Correo:</strong> contacto@intertech.com</p>
+
+        <!-- Mapa -->
+        <div class="contacto-mapa">
+          <iframe 
+            src="https://www.google.com/maps?q=Jr.+San+Lino+6378,+Los+Olivos,+Lima,+Perú&output=embed"
+            allowfullscreen=""
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+  <!-- FOOTER -->
+  <footer class="footer fade-up">
+    <div>
+      <img src="images/logomejorado.jpg" alt="Logo" class="footer-logo">
+      <p>Más de 8 años brindando confianza en el sector automotriz.</p>
+    </div>
+    <div>
+      <h4>Links</h4>
+      <a href="#">Inicio</a>
+      <a href="#">Servicios</a>
+      <a href="#">Nosotros</a>
+      <a href="#">Contacto</a>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <p>Tel: +51 999 999 999</p>
+      <p>info@intertech.com</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT PARA ANIMACIONES -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const elementos = document.querySelectorAll(".fade-up");
+
+    const observador = new IntersectionObserver((entradas) => {
+      entradas.forEach(entrada => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add("visible");
+        } else {
+          entrada.target.classList.remove("visible"); // 👈 se reinicia al salir
+        }
+      });
+    }, { threshold: 0.15 });
+
+    elementos.forEach(el => observador.observe(el));
+  });
+  </script>
+  <script>
+  const hamburger = document.getElementById('hamburger');
+  const links = document.querySelector('.links');
+
+  hamburger.addEventListener('click', () => {
+    links.classList.toggle('show');
+  });
+</script>
+</body>
+</html>
