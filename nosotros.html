@@ -121,6 +121,59 @@
     </div>
   </section>
 
+<!-- INFRA: NUEVOS VALORES  -->
+<section class="valores fade-up" id="valores">
+  <div class="valores-intro">
+    <h2>Nuestros valores en acción</h2>
+    <p class="lead">Tradición, técnica y responsabilidad: así resolvemos interrupciones. Cada valor es una promesa que cumplimos en terreno.</p>
+  </div>
+
+  <div class="valores-grid">
+    <article class="valor-card" tabindex="0" aria-labelledby="v1-title">
+      <div class="icon" aria-hidden="true">
+        <!-- icono motor (inline SVG) -->
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h4l2-3h6l2 3h4"/><path d="M12 3v8"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+      </div>
+      <h3 id="v1-title">Compromiso 24/7</h3>
+      <p>Atendemos emergencias con rapidez y continuidad; nuestro objetivo es minimizar tiempos de paro para que tu operación no se detenga.</p>
+      <div class="meta"><strong>Respuesta media:</strong> 45 min (referencial)</div>
+    </article>
+
+    <article class="valor-card" tabindex="0" aria-labelledby="v2-title">
+      <div class="icon" aria-hidden="true">
+        <!-- icono escudo -->
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 5-3.6 9.7-7 10-3.4-.3-7-5-7-10V6l7-4z"/></svg>
+      </div>
+      <h3 id="v2-title">Seguridad y cumplimiento</h3>
+      <p>Nuestros procesos están estandarizados y homologados; priorizamos la seguridad del equipo y del personal en cada intervención.</p>
+    </article>
+
+    <article class="valor-card" tabindex="0" aria-labelledby="v3-title">
+      <div class="icon" aria-hidden="true">
+        <!-- icono herramientas -->
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2l4 4-8 8-4-4 8-8z"/><path d="M3 21l6-2"/></svg>
+      </div>
+      <h3 id="v3-title">Excelencia técnica</h3>
+      <p>Inversión en herramientas de diagnóstico y formación continua para ofrecer reparaciones con garantía y trazabilidad.</p>
+    </article>
+
+    <article class="valor-card" tabindex="0" aria-labelledby="v4-title">
+      <div class="icon" aria-hidden="true">
+        <!-- icono mano/apego -->
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-4-6-9 3-6 6-6 6 3 6 6-6 9-6 9z"/></svg>
+      </div>
+      <h3 id="v4-title">Transparencia & Honestidad</h3>
+      <p>Presupuestos claros, registros de trabajo y comunicación directa: así mantenemos relaciones de confianza y largo plazo.</p>
+    </article>
+  </div>
+
+  <div class="valores-cta">
+    <a class="boton-primario" href="contactanos.html">Solicita una visita técnica</a>
+    <a class="boton-sec" href="images/brochure.pdf" target="_blank" rel="noopener">Descargar brochure</a>
+  </div>
+</section>
+
+
   <!-- FOOTER -->
   <footer class="footer fade-up">
     <div>
@@ -167,5 +220,32 @@
     links.classList.toggle('show');
   });
 </script>
+<script>
+/* ejemplo: si usas métricas con data-target en .meta, las puedes animar al entrar en viewport */
+document.addEventListener('DOMContentLoaded', () => {
+  const obs = new IntersectionObserver((entries, o) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const el = e.target;
+        // si tienes spans con data-target dentro de .meta
+        el.querySelectorAll('[data-target]').forEach(sp => {
+          const end = Number(sp.getAttribute('data-target')) || 0;
+          let cur = 0;
+          const step = Math.max(1, Math.round(end / 25));
+          const t = setInterval(()=> {
+            cur += step;
+            if (cur >= end) { sp.textContent = end; clearInterval(t); }
+            else sp.textContent = cur;
+          }, 20);
+        });
+        o.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.15});
+
+  document.querySelectorAll('.valor-card').forEach(n => obs.observe(n));
+});
+</script>
+
 </body>
 </html>
