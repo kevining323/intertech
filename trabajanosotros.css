@@ -1,3 +1,10 @@
+:root {
+  --color-primario: #1E3A5F;     /* azul acero corporativo */
+  --color-secundario: #B7410E;  /* amarillo maquinaria */
+  --fondo: #F4F4F4;      /* gris claro técnico */
+}
+
+
 /* GENERAL */
 body {
   margin: 0;
