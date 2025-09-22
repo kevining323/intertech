@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trabaja con Nosotros - Intertech</title>
+  <link rel="stylesheet" href="trabajanosotros.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">Intertech</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contactanos.html">Contáctanos</a></li>
+          <li><a href="trabajanosotros.html" class="activo">Trabaja con Nosotros</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SECCIÓN TRABAJA -->
+  <section class="trabaja">
+    <div class="container">
+      <h2>Únete a nuestro equipo</h2>
+      <p>Queremos conocerte. Completa el formulario y adjunta tu CV para formar parte de Intertech.</p>
+
+      <form class="formulario" action="procesar_trabaja.php" method="post" enctype="multipart/form-data">
+        <div class="campo">
+          <label for="nombres">Nombres:</label>
+          <input type="text" id="nombres" name="nombres" required>
+        </div>
+
+        <div class="campo">
+          <label for="apellidos">Apellidos:</label>
+          <input type="text" id="apellidos" name="apellidos" required>
+        </div>
+
+        <div class="campo">
+          <label for="telefono">Número de Teléfono:</label>
+          <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" placeholder="Ej: 987654321" required>
+        </div>
+
+        <div class="campo">
+          <label for="correo">Correo Electrónico:</label>
+          <input type="email" id="correo" name="correo" required>
+        </div>
+
+        <div class="campo">
+          <label for="cv">Adjuntar CV (PDF o Word):</label>
+          <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+        </div>
+
+        <button type="submit" class="boton">Enviar Postulación</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2025 Intertech. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
