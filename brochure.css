@@ -165,7 +165,7 @@ body {
 
 /* FOOTER */
 .footer {
-  background: #0a2a43;
+  background: --color-primario;
   color: #fff;
   text-align: center;
   padding: 1rem;
