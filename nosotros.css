@@ -202,7 +202,7 @@ body {
 }
 /* HERO */
 .hero {
-  background: linear-gradient(rgba(31,41,55,0.7), rgba(31,41,55,0.7)), url('images/t.18.jpeg') center/cover;
+  background: linear-gradient(rgba(31,41,55,0.7), rgba(31,41,55,0.7)), url('images/nosotros.jpg') center/cover;
   color: white;
   text-align: left;
   padding: 10rem 5%;
@@ -233,6 +233,11 @@ body {
 .info-content img {
   width: 350px;
   border-radius: 10px;
+}
+.img-wrapperobj {
+  width: 400px;
+  border-radius: 8px;
+  margin-left: 14rem;
 }
 .info .texto h2 {
   font-family: 'Merriweather', serif;
