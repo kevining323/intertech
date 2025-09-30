@@ -65,13 +65,18 @@
 
 
   <!-- HERO -->
-  <section class="hero fade-up">
-    <div class="hero-content">
-      <h1>Soluciones tecnológicas a tu alcance</h1>
-      <p>Especialistas en maquinaria pesada, mantenimiento y asistencia técnica en todo el país.</p>
-      <button class="boton-primario">Solicitar ayuda urgente</button>
-    </div>
-  </section>
+<section class="hero fade-up">
+  <div class="hero-content">
+    <h1>Soluciones tecnológicas a tu alcance</h1>
+    <p>Especialistas en maquinaria pesada, mantenimiento y asistencia técnica en todo el país.</p>
+    <button class="boton-primario" id="btnAyuda">Solicitar ayuda urgente</button>
+  </div>
+</section>
+<script>
+  document.getElementById("btnAyuda").addEventListener("click", () => {
+    window.location.href = "contactanos.html";
+  });
+</script>
 
   <!-- SECCIÓN 1 -->
   <section class="info fade-up">
@@ -105,24 +110,24 @@
     <div class="cards">
       <div class="card fade-up">
         <div class="img-wrapper">
-          <img src="images/carrousel/85f14a304dc64a06d5fb98af79ad096500be09fa.jpg" alt="">
+          <img src="images/servicioyatencion.jpg" alt="">
         </div>
-        <h3>Mantenimiento General</h3>
-        <p>Mantenimiento preventivo y correctivo de maquinaria pesada.</p>
+        <h3>Servicio y atención</h3>
+        <p>Queremos ser un socio estratégico apoyándolos a prolongar la vida útil de sus unidades, para lo cual nuestro personal está altamente capacitado en reparación de motores tanto en nuestro país como el extranjero.</p>
       </div>
       <div class="card fade-up">
         <div class="img-wrapper">
-          <img src="images/carrousel/9873b28b3946ff62709870bf93ec4264ecc590d5.jpg" alt="">
+          <img src="images/garantiasbuenservicio.jpg" alt="">
         </div>
-        <h3>Reparaciones eléctricas</h3>
-        <p>Reparación de sistemas eléctricos y electrónicos.</p>
+        <h3>Garantías de un buen servicio</h3>
+        <p>Como Usted apreciara estamos en condiciones óptimas para poderles brindar un servicio de calidad y con personal altamente capacitado y con equipos que garantizan un servicio eficaz.</p>
       </div>
       <div class="card fade-up">
         <div class="img-wrapper">
-          <img src="images/carrousel/cb7f0f49e5f43b8338f9a4359d9a117a82a46a61.jpg" alt="">
+          <img src="images/importacionrepuesto.jpg" alt="">
         </div>
-        <h3>Diagnóstico técnico</h3>
-        <p>Diagnóstico computarizado de fallas técnicas.</p>
+        <h3>Importación de repuestos</h3>
+        <p>Usted es bien recibido en su empresa dedicada a la importación de repuestos, mantenimiento, reparación, de las marcas Cummins, Fiatallis, International, Iveco, New Holland etc.</p>
       </div>
     </div>
   </section>

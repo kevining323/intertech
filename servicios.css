@@ -223,18 +223,13 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 768px) {
+  .sponsors .logos {
+    flex-direction: column;  /* apila los logos verticalmente */
+    gap: 2rem;               /* reduce el espacio entre ellos */
+    align-items: center;     /* centra los logos */
+  }
+}
 
 
 

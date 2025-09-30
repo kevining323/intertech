@@ -246,6 +246,27 @@ body {
   margin-bottom: 1rem;
 }
 
+@media (max-width: 768px) {
+  .info-content {
+    flex-direction: column;   /* apila verticalmente */
+    gap: 2rem;                /* espacio entre texto e imagen */
+  }
+
+  .info-content img,
+  .img-wrapperobj {
+    width: 100%;              /* ocupa todo el ancho del contenedor */
+    max-width: 350px;         /* opcional para no exceder tamaño */
+    margin-left: 0;           /* elimina margen lateral */
+    order: 2;                 /* fuerza la imagen a ir después del texto */
+  }
+
+  .info .texto {
+    order: 1;                 /* fuerza el texto a ir primero */
+    text-align: center;       /* centra el texto en móvil */
+  }
+}
+
+
 /* SPONSORS */
 .sponsors {
   text-align: center;

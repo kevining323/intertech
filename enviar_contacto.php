@@ -1,44 +1,39 @@
 <?php
+// 1️⃣ Cargar PHPMailer desde la carpeta "phpmailer" descargada de GitHub
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// Incluir PHPMailer
 require 'phpmailer/PHPMailer.php';
 require 'phpmailer/SMTP.php';
 require 'phpmailer/Exception.php';
 
-// Asegurar que el formulario se envió por POST
-if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    exit("Acceso no autorizado.");
-}
-
-
-// Recibir datos del formulario
+// 2️⃣ Recibir datos del formulario
 $nombre  = $_POST['nombre'];
 $cargo   = $_POST['cargo'];
 $email   = $_POST['email'];
 $asunto  = $_POST['asunto'];
 $mensaje = $_POST['mensaje'];
 
-// Crear instancia
+// 3️⃣ Crear instancia
 $mail = new PHPMailer(true);
 
 try {
-    // Configuración del servidor SMTP de cPanel 
+    // 4️⃣ Configuración del servidor SMTP de tu hosting
     $mail->isSMTP();
-    $mail->Host       = 'contacto@intertechperu.net';      // DOMINIO
+    $mail->Host       = 'mail.intertechperu.net';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'contacto@intertechperu.net';  // CORREO en cPanel
-    $mail->Password   = 'M4yDBnl25SYA;,^x';             // ← Contraseña del correo
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port       = 587;
+    $mail->Username   = 'contacto@intertechperu.net';
+    $mail->Password   = 'M4yDBnl25SYA;,^x';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // <— Importante: SSL/TLS desde el inicio
+    $mail->Port       = 465;                         // <— Puerto correcto
+    $mail->Timeout    = 20;                        // ✅ Puerto seguro
 
-    // Configuración del remitente y destinatario
-    $mail->setFrom('contacto@intertechperu.net', 'Formulario Intertech'); // desde
-    $mail->addAddress('contacto@intertechperu.net', 'Intertech');         // 📥 hacia
-    $mail->addReplyTo($email, $nombre);                               // para responder al usuario
+    // 5️⃣ Configurar remitente y destinatario
+    $mail->setFrom('contacto@intertechperu.net', 'Formulario Intertech');
+    $mail->addAddress('contacto@intertechperu.net', 'Intertech'); // 📥 Donde recibes los mensajes
+    $mail->addReplyTo($email, $nombre); // 📤 Para poder responder al remitente
 
-    // Contenido del correo
+    // 6️⃣ Contenido del correo
     $mail->isHTML(true);
     $mail->Subject = "Nuevo mensaje desde el formulario de contacto";
     $mail->Body    = "
@@ -50,18 +45,17 @@ try {
         <p><strong>Mensaje:</strong><br>$mensaje</p>
     ";
 
-    // Enviar correo
+    // 7️⃣ Enviar correo
     $mail->send();
 
     echo "<script>
-      alert('Tu mensaje fue enviado correctamente. Pronto nos pondremos en contacto contigo.');
+      alert('✅ Tu mensaje fue enviado correctamente. Pronto nos pondremos en contacto contigo.');
       window.location.href='contactanos.html';
     </script>";
 } catch (Exception $e) {
     echo "<script>
-      alert('Error al enviar el mensaje: {$mail->ErrorInfo}');
+      alert('❌ Error al enviar el mensaje: {$mail->ErrorInfo}');
       window.location.href='contactanos.html';
     </script>";
 }
 ?>
-    

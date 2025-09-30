@@ -152,6 +152,25 @@ body {
 }
 
 /* SERVICIOS */
+/* SERVICIOS - imágenes cuadradas y centradas */
+.servicios .card .img-wrapper {
+  width: 100%;          /* ocupa todo el ancho de la card */
+  aspect-ratio: 1 / 1;  /* fuerza a ser cuadrada */
+  overflow: hidden;     /* recorta cualquier exceso */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.servicios .card .img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* cubre el área manteniendo el recorte proporcional */
+  display: block;
+  border-radius: 8px;
+}
+
 .servicios {
   padding: 5rem 5%;
   background: #fff;
@@ -212,6 +231,59 @@ body {
   transform: scale(1.1);
   opacity: 1;
 }
+
+/* SPONSORS - Responsive para móviles: texto arriba, logos abajo */
+@media (max-width: 768px) {
+  .sponsors {
+    text-align: center;
+  }
+
+  .sponsors .logos {
+    flex-direction: column;  /* apila los logos verticalmente */
+    gap: 2rem;               /* espacio entre los logos */
+    margin-top: 1.5rem;
+    align-items: center;     /* centra los logos */
+    order: 2;                /* fuerza a que las imágenes vayan después del texto */
+  }
+
+  .sponsors h2,
+  .sponsors p {
+    order: 1;                /* fuerza el texto a ir primero */
+  }
+
+  .sponsors .logos img {
+    width: 120px;
+    height: auto;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .info-content {
+    flex-direction: column;  /* apila verticalmente */
+    gap: 2rem;               /* espacio entre texto e imagen */
+    text-align: center;      /* centra el texto en móvil */
+  }
+
+  .info-content .texto {
+    order: 1;                /* fuerza el texto a ir primero */
+  }
+
+  .info-content .img-wrapper {
+    order: 2;                /* fuerza la imagen a ir después del texto */
+    width: 100%;             /* ocupa todo el ancho disponible */
+    max-width: 350px;        /* opcional: limita tamaño máximo */
+    margin-left: 0;          /* elimina margen lateral */
+  }
+
+  .info-content .img-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+}
+
 
 /* TRABAJA CON NOSOTROS */
 .trabaja {
