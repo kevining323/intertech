@@ -159,8 +159,7 @@ body {
   min-width: 720px;
 }
 .schedule-table thead tr {
-  background: -webkit-linear-gradient(90deg, #2e42dc, #e94416); /* Chrome, Safari */
-  background: linear-gradient(90deg, #2e42dc, #e94416); /* W3C estándar */
+  background: #043678
 }
 .schedule-table thead th {
   /*background:  #e3a962;*/
