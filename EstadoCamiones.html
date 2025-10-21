@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="EstadoCamiones.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+    <title>EstadoCamiones</title>
+</head>
+<body>
+    <header class="navbar fade-up">
+        <div class="nav-content">
+        <div class="logo-container img-wrapper">
+            <img src="images/logomejorado.jpg" alt="Logo Intertech" class="logo">
+        </div>
+
+        <!-- BOTÓN HAMBURGUESA -->
+        <div class="hamburguesa" id="hamburguesa">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- MENÚ NAVEGACIÓN -->
+        <nav class="links" id="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="contactanos.html">Contacto</a>
+            <a href="#" class="cta">Llámanos</a>
+        </nav>
+
+        <div class="hamburger" id="hamburger">
+        ☰
+        </div>
+        </div>
+    </header>
+
+<!-- PROGRAMA SEMANAL -->
+<section class="schedule fade-up" id="programa-semanal">
+  <div class="schedule-container">
+    <div class="schedule-header">
+      <h2>Taller de mantenimiento</h2>
+      <p><strong>Programa semanal de reparación de equipos</strong></p>
+      <div class="schedule-meta">
+        <div>
+          <span class="label">Gerencia:</span> Servicios en Lima y provincias
+        </div>
+        <div>
+          <span class="label">Semana Nº:</span> 21/10/2024 - 27/10/2024
+        </div>
+      </div>
+    </div>
+
+    <div class="schedule-table-wrapper">
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th rowspan="2">N° Unidad</th>
+            <th rowspan="2">Descripción</th>
+            <th rowspan="2">Cliente</th>
+            <th rowspan="2">OT</th>
+            <th rowspan="2">Responsable</th>
+            <th rowspan="2">Fecha de entrega</th>
+            <th rowspan="2">CR. Destino</th>
+            <th rowspan="2">Personal asignado</th>
+            <th colspan="5">Programación</th>
+            <th rowspan="2">Comentarios</th>
+          </tr>
+          <tr>
+            <th>02/08/2025</th>
+            <th>03/08/2025</th>
+            <th>04/08/2025</th>
+            <th>05/08/2025</th>
+            <th>08/08/2025</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>674</td>
+            <td>Mantenimiento mayor de compresor</td>
+            <td>UNICON</td>
+            <td>30456</td>
+            <td>INTERTECH</td>
+            <td>21/10/24</td>
+            <td>CREI-0875</td>
+            <td>Equipo A</td>
+            <td class="check">1</td>
+            <td class="check">1</td>
+            <td class="check">1</td>
+            <td class="check">1</td>
+            <td class="check">1</td>
+            <td>Repuestos listos en almacén.</td>
+          </tr>
+
+          <tr>
+            <td>52037007R</td>
+            <td>Revisión sistema hidráulico</td>
+            <td>UNICON</td>
+            <td>30488</td>
+            <td>INTERTECH</td>
+            <td>22/10/24</td>
+            <td>CREI-0878</td>
+            <td>Luis Junior Alco</td>
+            <td class="check">1</td>
+            <td class="check">1</td>
+            <td class="check">1</td>
+            <td class="check">1</td>
+            <td class="check">1</td>
+            <td>Pruebas funcionales en progreso.</td>
+          </tr>
+
+          <tr>
+            <td>57001004</td>
+            <td>Diagnóstico electrónico</td>
+            <td>UNICON</td>
+            <td>30501</td>
+            <td>TERCEROS</td>
+            <td>23/10/24</td>
+            <td>CREI-0882</td>
+            <td>Equipo B</td>
+            <td class="check">2</td>
+            <td class="check">2</td>
+            <td class="check">2</td>
+            <td class="check">2</td>
+            <td class="check">2</td>
+            <td>Esperando autorización de cliente.</td>
+          </tr>
+
+          <tr>
+            <td>43013019</td>
+            <td>Reparación motor Cummins</td>
+            <td>UNICON</td>
+            <td>30510</td>
+            <td>INTERTECH</td>
+            <td>24/10/24</td>
+            <td>CREI-0886</td>
+            <td>Equipo C</td>
+            <td class="check">1</td>
+            <td class="check">1</td>
+            <td class="check">1</td>
+            <td class="check">1</td>
+            <td class="check">1</td>
+            <td>Entrega programada viernes.</td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <td colspan="8" class="totals-label">Total técnicos programados</td>
+            <td class="totals-value">5</td> <!-- Totales por fecha -->
+            <td class="totals-value">5</td>
+            <td class="totals-value">5</td>
+            <td class="totals-value">5</td>
+            <td class="totals-value">5</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+
+
+    <!-- FOOTER -->
+  <footer class="footer fade-up">
+    <div>
+      <img src="images/logomejorado.jpg" alt="Logo" class="footer-logo">
+      <p>Más de 8 años brindando confianza en el sector automotriz.</p>
+    </div>
+    <div>
+      <h4>Links</h4>
+      <a href="#">Inicio</a>
+      <a href="#">Servicios</a>
+      <a href="#">Nosotros</a>
+      <a href="#">Contacto</a>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <p>Tel: (01) 6523531</p>
+      <p>info@intertech.com</p>
+      <a href="https://www.facebook.com/intertechperu/">Nuestra pagina en facebook</a>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -140,6 +140,15 @@ body {
   max-width: 1100px;
   margin: 0 auto;
 }
+.info-content-status {
+  display: flex;
+  align-items: center;       /* centra verticalmente */
+  justify-content: center;   /* centra horizontalmente */
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 .info-content img {
   width: 350px;
   border-radius: 10px;
